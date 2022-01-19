@@ -1,19 +1,6 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: Provisions EventsRole and EventsRule resources to send CloudTrail events to Fugue's event bus
 Parameters:
-  RoleName:
-    Type: String
-    Description: Name of the IAM role to create
-  TrustedPrincipal:
-    Type: String
-    Description: Principal that will be allowed cross-account access
-    Default: "role/generate-credentials"
-  TrustedAccountID:
-    Type: String
-    Description: AWS account ID that will be granted cross-account access
-  ExternalID:
-    Type: String
-    Description: External ID for the IAM role
   EventBusArn:
     Type: String
     Description: Fugue event bus ARN
