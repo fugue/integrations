@@ -27,7 +27,6 @@ Resources:
     Type: AWS::Events::Rule
     Properties:
       Description: Fugue Events Rule
-      RoleArn: !GetAtt FugueEventsRole.Arn
       EventPattern:
         source:
           - "aws.acm"
@@ -87,3 +86,4 @@ Resources:
       Targets:
         - Arn: !Ref EventBusArn
           Id: "TargetEventBus"
+          RoleArn: !GetAtt FugueEventsRole.Arn
